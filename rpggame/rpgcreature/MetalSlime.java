@@ -7,12 +7,13 @@ import java.util.Random;
  */
 public class MetalSlime extends Monster{
     private final static int ESCAPE_RATE = 40;
-    
+    private final static int METAL_SLIME_HP=12;
+    private final int DAMAGE_MAX=5;
     /**
      * メタルスライムのコンストラクタ
      */
     public MetalSlime(){
-        super("メタルスライム",12);
+        super("メタルスライム",METAL_SLIME_HP);
     }
 
     /**
@@ -23,11 +24,11 @@ public class MetalSlime extends Monster{
     public void attack(Creature opponent) {
         if(isThere()){
             Random r = new Random();
-            if( r.nextInt(100) < ESCAPE_RATE ){
+            if( r.nextInt(PERSENT) < ESCAPE_RATE ){
                 System.out.printf("%sは逃げ出した！\n",getName());
                 escapeFlag = true;
             }else{
-                int damage = r.nextInt(5);
+                int damage = r.nextInt(DAMAGE_MAX);
                 System.out.printf("%sの攻撃！\n",getName());
             
                 opponent.damaged(damage);

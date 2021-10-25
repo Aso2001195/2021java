@@ -1,15 +1,14 @@
 package rpgcreature;
-
 /**
  * モンスターのスーパークラス
  */
 public abstract class Monster extends Creature{
     protected boolean escapeFlag = false;
-
+    protected int PERSENT=100;
     /**
      * モンスタークラスのコンストラクタ
-     * @param name　名前
-     * @param hp　モンスターの体力
+     * 
+     * 
      */
     public Monster(String name,int hp){
         super(name,hp);

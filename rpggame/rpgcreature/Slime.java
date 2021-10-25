@@ -6,12 +6,13 @@ import java.util.Random;
  * スライムクラス
  */
 public class Slime extends Monster{
-
+    private static final int SLIME_HP=12;
+    private final int DAMAGE_MAX=5;
     /**
      * スライムクラスのコンストラクタ
      */
     public Slime(){
-        super("スライム",12);
+        super("スライム",SLIME_HP);
     }
 
     /**
@@ -22,7 +23,7 @@ public class Slime extends Monster{
     public void attack(Creature opponent) {
         if(isThere()){
             Random r = new Random();
-            int damage = r.nextInt(5);
+            int damage = r.nextInt(DAMAGE_MAX);
             System.out.printf("%sの攻撃！\n",getName());
         
             opponent.damaged(damage);
